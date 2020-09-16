@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from parametros import IMPLEMENTOS_DEPORTIVOS_IEEESPARTA, IMPLEMENTOS_DEPORTIVOS_DCCROTONA, BONUS_IMPLEMENTOS_DEPORTIVOS_IEEES, BONUS_IMPLEMENTOS_DEPORTIVOS_DCC, NIVEL_IMPLEMENTOS
 
 ###DELEGACIONES###
 
@@ -8,6 +9,8 @@ class Delegaciones(ABC):
         self.__equipo = equipo
         self.__medallas = int(medallas)
         self.__dinero = int(dinero)
+        self.cantidad_bonus = 0
+        self.bonus_medico = 0
 
     @abstractmethod
     def sanar_lesiones(self):
@@ -92,42 +95,4 @@ class Deportistas:
 
     def __str__(self):
         return "DEPORTISTA AÑADIDO: "+self.nombre
-
-
-###DEPORTES####
-
-class Deporte(ABC):
-    def __init__(self, riesgo, implemento):
-        self.riesgo = riesgo
-        self.implemento = implemento
-
-class Ciclismo(Deporte):
-    def __init__(self, riesgo, implemento, vel, res, flex):
-        super().__init__(riesgo, implemento)
-        self.velocidad = vel
-        self.resistencia = res
-        self.flexibilidad = flex
-
-class Natacion(Deporte):
-    def __init__(self, riesgo, implemento, vel, res, flex):
-        super().__init__(riesgo, implemento)
-        self.velocidad = vel
-        self.resistencia = res
-        self.flexibilidad = flex
-
-class Atletismo(Deporte):
-    def __init__(self, riesgo, implemento, vel, res, flex):
-        super().__init__(riesgo, implemento)
-        self.velocidad = vel
-        self.resistencia = res
-        self.flexibilidad = flex
-
-class Gimnasia(Deporte):
-    def __init__(self, riesgo, implemento, res, flex, mor):
-        super().__init__(riesgo, implemento)
-        self.resistencia = res
-        self.flexibilidad = flex
-        self.moral = mor
-
-
 
