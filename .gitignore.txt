@@ -1,2 +1,2 @@
-delegaciones.csv
-deportistas.csv
+delegaciones
+deportistas
