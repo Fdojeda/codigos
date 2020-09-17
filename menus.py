@@ -115,7 +115,119 @@ class Menu_Principal(Menu):
                     COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
                     COMPETIDOR_2 = random.randint(len(DCC.get_equipo()))
                     if deporte == "0":##########
-                        DEPORT = Ciclismo(PROBABILIDAD_ACCIDENTARSE_CICLISMO, True, PONDERACION_VELOCIDAD_ATLETISMO, PONDERACION_RESISTENCIA_CICLISMO, PONDERACION_FLEXIBILIDAD_CICLISMO)
+                        DEPORT = Ciclismo(PROBABILIDAD_ACCIDENTARSE_CICLISMO, True, PONDERACION_VELOCIDAD_CICLISMO, PONDERACION_RESISTENCIA_CICLISMO, PONDERACION_FLEXIBILIDAD_CICLISMO)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(DCC.get_equipo()))
+                    if deporte == "1":##########
+                        DEPORT = Atletismo(PROBABILIDAD_ACCIDENTARSE_ATLETISMO, False, PONDERACION_VELOCIDAD_ATLETISMO, PONDERACION_RESISTENCIA_ATLETISMO, PONDERACION_MORAL_ATLETISMO)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(DCC.get_equipo()))
+                    if deporte == "2":##########
+                        DEPORT = Natacion(PROBABILIDAD_ACCIDENTARSE_NATACION, False, PONDERACION_VELOCIDAD_NATACION, PONDERACION_RESISTENCIA_NATACION, PONDERACION_FLEXIBILIDAD_NATACION)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                 elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(DCC.get_equipo()))
+                    if deporte == "3":##########
+                        DEPORT = Gimnasia(PROBABILIDAD_ACCIDENTARSE_GIMNASIA, True, PONDERACION_MORAL_GIMNASIA, PONDERACION_RESISTENCIA_GIMNASIA, PONDERACION_FLEXIBILIDAD_GIMNASIA)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+
+        elif DCC.propio:
+            i = 0
+            for deportista in DCC.get_equipo():
+                print("["+str(i)+"] "+(deportista.nombre))
+                i += 1
+            comp_1 = input("ELIGA TU COMPETIDOR: ")
+            while True:
+                if comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(IEEES.get_equipo()))
+                    if deporte == "0":##########
+                        DEPORT = Ciclismo(PROBABILIDAD_ACCIDENTARSE_CICLISMO, True, PONDERACION_VELOCIDAD_CICLISMO, PONDERACION_RESISTENCIA_CICLISMO, PONDERACION_FLEXIBILIDAD_CICLISMO)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(IEEES.get_equipo()))
+                    if deporte == "1":##########
+                        DEPORT = Atletismo(PROBABILIDAD_ACCIDENTARSE_ATLETISMO, False, PONDERACION_VELOCIDAD_ATLETISMO, PONDERACION_RESISTENCIA_ATLETISMO, PONDERACION_MORAL_ATLETISMO)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(IEEES.get_equipo()))
+                    if deporte == "2":##########
+                        DEPORT = Natacion(PROBABILIDAD_ACCIDENTARSE_NATACION, False, PONDERACION_VELOCIDAD_NATACION, PONDERACION_RESISTENCIA_NATACION, PONDERACION_FLEXIBILIDAD_NATACION)
+                        valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
+                        if valido == "Ambos cumplen":
+                            ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)
+                        elif valido == "IEEES no cumple":
+                            return "GANA DCC WUU"
+                        elif valido == "DCC no cumple":
+                            return "GANA IEEES UWU"
+                        elif valido == "Ninguno cumple":
+                            return "EMPATE"
+                        
+                 elif comp_1 < i:
+                    COMPETIDOR_1 = IEEES.get_equipo()[comp_1]
+                    COMPETIDOR_2 = random.randint(len(IEEES.get_equipo()))
+                    if deporte == "3":##########
+                        DEPORT = Gimnasia(PROBABILIDAD_ACCIDENTARSE_GIMNASIA, True, PONDERACION_MORAL_GIMNASIA, PONDERACION_RESISTENCIA_GIMNASIA, PONDERACION_FLEXIBILIDAD_GIMNASIA)
                         valido = DEPORT.validez_competencia(COMPETIDOR_1, COMPETIDOR_2)
                         if valido == "Ambos cumplen":
                             ganador = DEPORT.calcular_ganador(COMPETIDOR_1, COMPETIDOR_2)

@@ -137,8 +137,8 @@ class Ciclismo(Deporte):
                     return "DCC no cumple"
 
     def calcular_ganador(self, deportista_1, deportista_2):########
-        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_1.velocidad) + (PONDERACION_RESISTENCIA_CICLISMO*deportista_1.resistencia) + (PONDERACION_FLEXIBILIDAD_CICLISMO*deportista_1.flexibilidad)))
-        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_2.velocidad) + (PONDERACION_RESISTENCIA_CICLISMO*deportista_2.resistencia) + (PONDERACION_FLEXIBILIDAD_CICLISMO*deportista_2.flexibilidad)))
+        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_1.velocidad) + (self.resistencia*deportista_1.resistencia) + (self.flexibilidad*deportista_1.flexibilidad)))
+        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_2.velocidad) + (self.resistencia*deportista_2.resistencia) + (self.flexibilidad*deportista_2.flexibilidad)))
         if puntaje_dep_1 > puntaje_dep_2:
             return "ganó IEEES"
         elif puntaje_dep_1 < puntaje_dep_2:
@@ -181,8 +181,8 @@ class Natacion(Deporte):
                     return "DCC no cumple"
 
     def calcular_ganador(self, deportista_1, deportista_2):########
-        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((PONDERACION_VELOCIDAD_NATACION*deportista_1.velocidad) + (PONDERACION_RESISTENCIA_NATACION*deportista_1.resistencia) + (PONDERACION_FLEXIBILIDAD_NATACION*deportista_1.flexibilidad)))
-        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((PONDERACION_VELOCIDAD_NATACION*deportista_2.velocidad) + (PONDERACION_RESISTENCIA_NATACION*deportista_2.resistencia) + (PONDERACION_FLEXIBILIDAD_NATACION*deportista_2.flexibilidad)))
+        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_1.velocidad) + (self.resistencia*deportista_1.resistencia) + (self.flexibilidad*deportista_1.flexibilidad)))
+        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_2.velocidad) + (self.resistencia*deportista_2.resistencia) + (self.flexibilidad*deportista_2.flexibilidad)))
         if puntaje_dep_1 > puntaje_dep_2:
             return "ganó IEEES"
         elif puntaje_dep_1 < puntaje_dep_2:
@@ -225,8 +225,8 @@ class Atletismo(Deporte):
                     return "DCC no cumple"
 
     def calcular_ganador(self, deportista_1, deportista_2):#######
-        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((PONDERACION_VELOCIDAD_ATLETISMO*deportista_1.velocidad) + (PONDERACION_RESISTENCIA_ATLETISMO*deportista_1.resistencia) + (PONDERACION_MORAL_ATLETISMO*deportista_1.moral)))
-        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((PONDERACION_VELOCIDAD_ATLETISMO*deportista_2.velocidad) + (PONDERACION_RESISTENCIA_ATLETISMO*deportista_2.resistencia) + (PONDERACION_MORAL_ATLETISMO*deportista_2.moral)))
+        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_1.velocidad) + (self.resistencia*deportista_1.resistencia) + (self.moral*deportista_1.moral)))
+        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((self.velocidad*deportista_2.velocidad) + (self.resistencia*deportista_2.resistencia) + (self.moral*deportista_2.moral)))
         if puntaje_dep_1 > puntaje_dep_2:
             return "ganó IEEES"
         elif puntaje_dep_1 < puntaje_dep_2:
@@ -288,8 +288,8 @@ class Gimnasia(Deporte):
                     return "DCC no cumple"
 
     def calcular_ganador(self, deportista_1, deportista_2):###########
-        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((PONDERACION_FLEXIBILIDAD_GIMNASIA*deportista_1.flexibilidad) + (PONDERACION_RESISTENCIA_GIMNASIA*deportista_1.resistencia) + (PONDERACION_MORAL_GIMNASIA*deportista_1.moral)))
-        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((PONDERACION_FLEXIBILIDAD_GIMNASIA*deportista_2.flexibilidad) + (PONDERACION_RESISTENCIA_GIMNASIA*deportista_2.resistencia) + (PONDERACION_MORAL_GIMNASIA*deportista_2.moral)))
+        puntaje_dep_1 = max(PUNTAJE_MINIMO, ((self.flexibilidad*deportista_1.flexibilidad) + (self.resistencia*deportista_1.resistencia) + (self.moral*deportista_1.moral)))
+        puntaje_dep_2 = max(PUNTAJE_MINIMO, ((self.flexibilidad*deportista_2.flexibilidad) + (self.resistencia*deportista_2.resistencia) + (self.moral*deportista_2.moral)))
         if puntaje_dep_1 > puntaje_dep_2:
             return "ganó IEEES"
         elif puntaje_dep_1 < puntaje_dep_2:
