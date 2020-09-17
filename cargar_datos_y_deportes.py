@@ -296,3 +296,5 @@ class Gimnasia(Deporte):
             return "ganó DCC"
         else:
             return "Empate"
+
+print (Ciclismo.calcular_ganador) 
