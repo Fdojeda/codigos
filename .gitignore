@@ -10,5 +10,4 @@ __pycache__/
 *.idea
 *.DS_STORE
 
-*.delegaciones
-*.deportistas
+*.csv
